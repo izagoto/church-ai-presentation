@@ -30,9 +30,7 @@ export default function App() {
     <div className="flex h-screen overflow-hidden bg-[#090a0d] text-white">
       <Sidebar />
 
-      <main className="min-w-0 flex-1 overflow-y-auto overflow-x-hidden px-8 py-7">
-        {renderPage()}
-      </main>
+      <main className="min-w-0 flex-1 overflow-hidden">{renderPage()}</main>
     </div>
   );
 }

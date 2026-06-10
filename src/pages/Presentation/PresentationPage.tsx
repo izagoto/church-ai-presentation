@@ -100,7 +100,7 @@ function ServiceInfoCard() {
   ];
 
   return (
-    <section className="grid min-w-0 grid-cols-1 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] md:grid-cols-2 2xl:grid-cols-4">
+    <section className="grid min-w-0 shrink-0 grid-cols-1 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] md:grid-cols-2 2xl:grid-cols-4">
       {info.map((item, index) => {
         const Icon = item.icon;
 
@@ -108,13 +108,13 @@ function ServiceInfoCard() {
           <div
             key={item.label}
             className={[
-              "flex items-center gap-3 px-5 py-4",
+              "flex items-center gap-3 px-5 py-3.5",
               index !== 0
                 ? "border-t border-white/10 md:border-l md:border-t-0"
                 : "",
             ].join(" ")}
           >
-            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
+            <div className="flex h-9 w-10 shrink-0 items-center justify-center rounded-xl bg-red-500/10 text-red-500">
               <Icon size={19} />
             </div>
 
@@ -160,7 +160,7 @@ function ServicePlanner() {
           return (
             <div
               key={item.id}
-              className="group flex items-center gap-3 py-3.5 transition"
+              className="group flex items-center gap-3 py-3 transition"
             >
               <button
                 type="button"
@@ -215,7 +215,7 @@ function ServicePlanner() {
         })}
       </div>
 
-      <div className="mt-4 rounded-xl border border-dashed border-white/10 bg-black/10 px-4 py-3 text-center text-sm text-white/35">
+      <div className="mt-3 rounded-xl border border-dashed border-white/10 bg-black/10 px-4 py-2.5 text-center text-xs text-white/35">
         Drag items to reorder the service flow
       </div>
     </section>
@@ -236,8 +236,8 @@ function SlideThumbnail({
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.28),transparent_28%)]" />
       <div className="absolute inset-0 bg-black/15" />
 
-      <div className="relative flex h-[104px] w-full flex-col items-center justify-center text-center">
-        <p className="text-lg font-bold leading-tight text-white drop-shadow">
+      <div className="relative flex h-[86px] w-full flex-col items-center justify-center text-center">
+        <p className="text-base font-bold leading-tight text-white drop-shadow">
           {title}
         </p>
         <p className="mt-1 text-sm font-medium text-white/90">{subtitle}</p>
@@ -273,14 +273,14 @@ function ProjectorPreview() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.32),transparent_26%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.05),rgba(0,0,0,0.28))]" />
 
-        <div className="relative flex aspect-[16/8.7] flex-col items-center justify-center px-10 text-center">
-          <h2 className="max-w-[720px] text-[38px] font-bold leading-[1.15] tracking-tight text-white drop-shadow-xl">
+        <div className="relative flex aspect-[16/7.4] flex-col items-center justify-center px-10 text-center">
+          <h2 className="max-w-[680px] text-[34px] font-bold leading-[1.15] tracking-tight text-white drop-shadow-xl">
             Kau setia Tuhan
             <br />
             Dari dulu s’lamanya
           </h2>
 
-          <p className="mt-3 text-xl font-medium text-white/90 drop-shadow">
+          <p className="mt-3 text-lg font-medium text-white/90 drop-shadow">
             Kasih-Mu tak pernah berubah
           </p>
         </div>
@@ -289,7 +289,7 @@ function ProjectorPreview() {
       <div className="mt-3 grid grid-cols-2 gap-2 2xl:grid-cols-5">
         <button
           type="button"
-          className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white/80 transition hover:bg-white/[0.07] hover:text-white"
+          className="inline-flex h-9 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white/80 transition hover:bg-white/[0.07] hover:text-white"
         >
           <ChevronLeft size={19} />
           Previous
@@ -297,7 +297,7 @@ function ProjectorPreview() {
 
         <button
           type="button"
-          className="inline-flex h-10 items-center justify-center gap-2 rounded-xl bg-red-600 text-sm font-semibold text-white shadow-lg shadow-red-950/30 transition hover:bg-red-500"
+          className="inline-flex h-9 items-center justify-center gap-2 rounded-xl bg-red-600 text-sm font-semibold text-white shadow-lg shadow-red-950/30 transition hover:bg-red-500"
         >
           Next
           <ChevronRight size={19} />
@@ -305,7 +305,7 @@ function ProjectorPreview() {
 
         <button
           type="button"
-          className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white/80 transition hover:bg-white/[0.07] hover:text-white"
+          className="inline-flex h-9 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white/80 transition hover:bg-white/[0.07] hover:text-white"
         >
           <Maximize2 size={17} />
           Fullscreen
@@ -313,7 +313,7 @@ function ProjectorPreview() {
 
         <button
           type="button"
-          className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white/80 transition hover:bg-white/[0.07] hover:text-white"
+          className="inline-flex h-9 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white/80 transition hover:bg-white/[0.07] hover:text-white"
         >
           <Monitor size={18} />
           Blank
@@ -321,7 +321,7 @@ function ProjectorPreview() {
 
         <button
           type="button"
-          className="inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white/80 transition hover:bg-white/[0.07] hover:text-white"
+          className="inline-flex h-9 items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] text-sm font-semibold text-white/80 transition hover:bg-white/[0.07] hover:text-white"
         >
           <Circle size={9} fill="#ef4444" className="text-red-500" />
           Live
@@ -378,22 +378,26 @@ function OperatorPreview() {
 
 export function PresentationPage() {
   return (
-    <div className="flex w-full min-w-0 flex-col gap-5 pb-6">
-      <header>
-        <h2 className="text-[34px] font-semibold leading-tight text-white">
+    <div className="flex h-full min-w-0 flex-col">
+      <header className="shrink-0 bg-[#090a0d] px-8 pb-4 pt-6">
+        <h2 className="text-[28px] font-semibold leading-tight text-white">
           Presentation
         </h2>
-        <p className="mt-1 text-base text-white/45">Service control center</p>
+        <p className="mt-1 text-sm text-white/45">Service control center</p>
       </header>
 
-      <ServiceInfoCard />
+      <div className="min-h-0 flex-1 overflow-hidden px-8 pb-6 pt-3">
+        <div className="flex h-full w-full min-w-0 flex-col gap-4">
+          <ServiceInfoCard />
 
-      <div className="grid min-w-0 grid-cols-1 items-start gap-5 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
-        <ServicePlanner />
+          <div className="grid min-h-0 min-w-0 flex-1 grid-cols-1 items-start gap-4 xl:grid-cols-[minmax(0,0.82fr)_minmax(0,1.18fr)]">
+            <ServicePlanner />
 
-        <div className="flex w-full min-w-0 flex-col gap-5">
-          <OperatorPreview />
-          <ProjectorPreview />
+            <div className="flex w-full min-w-0 flex-col gap-4">
+              <OperatorPreview />
+              <ProjectorPreview />
+            </div>
+          </div>
         </div>
       </div>
     </div>
