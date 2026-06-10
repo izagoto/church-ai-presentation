@@ -37,46 +37,40 @@ const menuItems: Array<{
 
 function ChurchLogo() {
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center text-center">
       <svg
-        width="76"
-        height="76"
+        width="62"
+        height="62"
         viewBox="0 0 120 120"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="drop-shadow-[0_0_16px_rgba(239,68,68,0.22)]"
+        className="drop-shadow-[0_0_14px_rgba(239,68,68,0.24)]"
       >
         <path
-          d="M60 18V64"
-          stroke="#ef4444"
+          d="M60 18V63"
+          stroke="#ff3b45"
           strokeWidth="10"
           strokeLinecap="round"
         />
         <path
-          d="M42 36H78"
-          stroke="#ef4444"
+          d="M43 36H77"
+          stroke="#ff3b45"
           strokeWidth="10"
           strokeLinecap="round"
         />
         <path
-          d="M28 73C40 69 51 72 60 82C69 72 80 69 92 73V92C78 87 68 89 60 99C52 89 42 87 28 92V73Z"
-          stroke="#ef4444"
+          d="M29 73C40 69 51 72 60 82C69 72 80 69 91 73V91C78 87 68 89 60 99C52 89 42 87 29 91V73Z"
+          stroke="#ff3b45"
           strokeWidth="6"
           strokeLinejoin="round"
         />
-        <path
-          d="M60 82V99"
-          stroke="#ef4444"
-          strokeWidth="5"
-          strokeLinecap="round"
-        />
       </svg>
 
-      <h1 className="mt-3 text-center text-[24px] font-semibold leading-tight text-white">
+      <h1 className="mt-3 text-[22px] font-semibold leading-none text-white">
         Church AI
       </h1>
 
-      <p className="mt-1 text-center text-[15px] font-medium text-white/45">
+      <p className="mt-2 text-[14px] font-medium text-white/45">
         Worship Presentation
       </p>
     </div>
@@ -87,14 +81,14 @@ export function Sidebar() {
   const { activePage, setActivePage } = useNavigationStore();
 
   return (
-    <aside className="relative flex h-screen w-[245px] shrink-0 flex-col overflow-hidden border-r border-white/10 bg-[#0d1116]">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.05),transparent_34%)]" />
+    <aside className="relative flex h-screen w-[220px] shrink-0 flex-col overflow-hidden border-r border-white/10 bg-[#0c1116]">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.055),transparent_34%)]" />
 
-      <div className="relative z-10 px-4 pt-10">
+      <div className="relative z-10 px-4 pt-8">
         <ChurchLogo />
       </div>
 
-      <nav className="relative z-10 mt-12 flex flex-col gap-2 px-3">
+      <nav className="relative z-10 mt-10 flex flex-col gap-1.5 px-2">
         {menuItems.map((item) => {
           const Icon = item.icon;
           const isActive = activePage === item.key;
@@ -105,33 +99,33 @@ export function Sidebar() {
               type="button"
               onClick={() => setActivePage(item.key)}
               className={[
-                "group relative flex h-[58px] w-full items-center gap-4 rounded-2xl px-5 text-left outline-none transition-all duration-200",
+                "group relative flex h-[52px] w-full items-center gap-3 rounded-xl px-4 text-left outline-none transition-all duration-200",
                 isActive
-                  ? "border border-white/10 bg-white/[0.045] text-red-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.04),0_10px_30px_rgba(0,0,0,0.18)]"
-                  : "border border-transparent text-white/65 hover:bg-white/[0.035] hover:text-white focus-visible:border-white/15 focus-visible:bg-white/[0.035]",
+                  ? "border border-white/10 bg-white/[0.055] text-red-500 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+                  : "border border-transparent text-white/62 hover:bg-white/[0.035] hover:text-white",
               ].join(" ")}
             >
               {isActive && (
-                <span className="absolute -left-3 top-1/2 h-[42px] w-[5px] -translate-y-1/2 rounded-r-full bg-red-500 shadow-[0_0_16px_rgba(239,68,68,0.75)]" />
+                <span className="absolute -left-2 top-1/2 h-[34px] w-[4px] -translate-y-1/2 rounded-r-full bg-red-500 shadow-[0_0_14px_rgba(239,68,68,0.8)]" />
               )}
 
               <Icon
-                size={25}
+                size={21}
                 strokeWidth={2}
                 className={[
                   "shrink-0 transition-colors",
                   isActive
                     ? "text-red-500"
-                    : "text-white/65 group-hover:text-white",
+                    : "text-white/62 group-hover:text-white",
                 ].join(" ")}
               />
 
               <span
                 className={[
-                  "text-[16px] font-semibold transition-colors",
+                  "text-[14px] font-semibold transition-colors",
                   isActive
                     ? "text-red-500"
-                    : "text-white/65 group-hover:text-white",
+                    : "text-white/62 group-hover:text-white",
                 ].join(" ")}
               >
                 {item.label}
@@ -141,10 +135,12 @@ export function Sidebar() {
         })}
       </nav>
 
-      <div className="relative z-10 mt-auto px-4 pb-5">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.03] px-4 py-3">
-          <p className="text-sm font-medium text-white">Operator</p>
-          <p className="mt-0.5 text-xs text-white/45">Local Device</p>
+      <div className="relative z-10 mt-auto px-3 pb-4">
+        <div className="rounded-xl border border-white/10 bg-white/[0.04] px-4 py-3">
+          <p className="text-sm font-semibold leading-none text-white">
+            Operator
+          </p>
+          <p className="mt-1.5 text-xs text-white/40">Local Device</p>
         </div>
       </div>
     </aside>

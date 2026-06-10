@@ -27,10 +27,12 @@ export default function App() {
   };
 
   return (
-    <div className="flex min-h-screen bg-[#0b0b0f] text-white">
+    <div className="flex h-screen overflow-hidden bg-[#090a0d] text-white">
       <Sidebar />
 
-      <main className="flex-1 overflow-y-auto px-8 py-8">{renderPage()}</main>
+      <main className="min-w-0 flex-1 overflow-y-auto overflow-x-hidden px-8 py-7">
+        {renderPage()}
+      </main>
     </div>
   );
 }
