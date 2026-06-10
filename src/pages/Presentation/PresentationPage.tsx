@@ -14,7 +14,6 @@ import {
   Trash2,
   UserRound,
 } from "lucide-react";
-import { Button } from "../../components/ui";
 
 type ServiceItemType = "song" | "bible" | "pdf";
 
@@ -73,6 +72,32 @@ function getItemLabel(type: ServiceItemType) {
   if (type === "song") return "Song";
   if (type === "bible") return "Bible";
   return "PDF";
+}
+
+function PlannerActionButton({
+  icon,
+  children,
+  primary,
+}: {
+  icon: React.ReactNode;
+  children: React.ReactNode;
+  primary?: boolean;
+}) {
+  return (
+    <button
+      type="button"
+      className={[
+        "inline-flex h-10 min-w-[132px] shrink-0 items-center justify-center gap-2 rounded-xl px-4 text-sm font-semibold transition",
+        "whitespace-nowrap leading-none",
+        primary
+          ? "border border-red-500/20 bg-red-500/10 text-red-300 hover:bg-red-500/15"
+          : "border border-white/10 bg-white/[0.04] text-white/75 hover:bg-white/[0.07] hover:text-white",
+      ].join(" ")}
+    >
+      {icon}
+      <span className="whitespace-nowrap">{children}</span>
+    </button>
+  );
 }
 
 function ServiceInfoCard() {
@@ -134,24 +159,30 @@ function ServiceInfoCard() {
 function ServicePlanner() {
   return (
     <section className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
-      <div className="mb-5 flex items-center justify-between">
-        <div>
+      <div className="mb-5 flex flex-wrap items-start justify-between gap-4">
+        <div className="min-w-0">
           <h3 className="text-base font-semibold text-white">
             Service Planner
           </h3>
+
           <p className="mt-1 text-xs text-white/40">
             Susun urutan ibadah dari awal sampai akhir.
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
-          <Button leftIcon={<Plus size={17} className="text-red-500" />}>
+        <div className="flex shrink-0 items-center gap-2">
+          <PlannerActionButton
+            primary
+            icon={<Plus size={17} className="shrink-0 text-red-400" />}
+          >
             Quick Add
-          </Button>
+          </PlannerActionButton>
 
-          <Button leftIcon={<Search size={17} />} variant="secondary">
+          <PlannerActionButton
+            icon={<Search size={17} className="shrink-0 text-white/65" />}
+          >
             Search Item
-          </Button>
+          </PlannerActionButton>
         </div>
       </div>
 
@@ -232,20 +263,23 @@ function SlideThumbnail({
   index: string;
 }) {
   return (
-    <div className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-[#28213b] via-[#6b2b30] to-[#ef9d4b] p-4 shadow-lg shadow-black/20">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.28),transparent_28%)]" />
-      <div className="absolute inset-0 bg-black/15" />
+    <div className="relative w-full overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] p-[1px] shadow-lg shadow-black/20">
+      <div className="relative overflow-hidden rounded-[11px] bg-gradient-to-br from-[#28213b] via-[#6b2b30] to-[#ef9d4b] p-4">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.28),transparent_28%)]" />
+        <div className="absolute inset-0 bg-black/15" />
 
-      <div className="relative flex h-[86px] w-full flex-col items-center justify-center text-center">
-        <p className="text-base font-bold leading-tight text-white drop-shadow">
-          {title}
-        </p>
-        <p className="mt-1 text-sm font-medium text-white/90">{subtitle}</p>
+        <div className="relative flex h-[86px] w-full flex-col items-center justify-center text-center">
+          <p className="text-base font-bold leading-tight text-white drop-shadow">
+            {title}
+          </p>
+
+          <p className="mt-1 text-sm font-medium text-white/90">{subtitle}</p>
+        </div>
+
+        <span className="absolute bottom-2 left-2 rounded-lg bg-black/45 px-2 py-1 text-xs font-medium text-white">
+          {index}
+        </span>
       </div>
-
-      <span className="absolute bottom-2 left-2 rounded-lg bg-black/45 px-2 py-1 text-xs font-medium text-white">
-        {index}
-      </span>
     </div>
   );
 }
@@ -258,6 +292,7 @@ function ProjectorPreview() {
           <h3 className="text-base font-semibold text-white">
             Projector Preview
           </h3>
+
           <p className="mt-1 text-xs text-white/40">
             Tampilan yang akan dilihat jemaat.
           </p>
@@ -269,20 +304,22 @@ function ProjectorPreview() {
         </div>
       </div>
 
-      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-[#202035] via-[#6f2d3b] to-[#f29c44] shadow-xl shadow-black/30">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.32),transparent_26%)]" />
-        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.05),rgba(0,0,0,0.28))]" />
+      <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.035] p-[1px] shadow-xl shadow-black/30">
+        <div className="relative overflow-hidden rounded-[15px] bg-gradient-to-br from-[#202035] via-[#6f2d3b] to-[#f29c44]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.32),transparent_26%)]" />
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.05),rgba(0,0,0,0.28))]" />
 
-        <div className="relative flex aspect-[16/7.4] flex-col items-center justify-center px-10 text-center">
-          <h2 className="max-w-[680px] text-[34px] font-bold leading-[1.15] tracking-tight text-white drop-shadow-xl">
-            Kau setia Tuhan
-            <br />
-            Dari dulu s’lamanya
-          </h2>
+          <div className="relative flex aspect-[16/7.4] flex-col items-center justify-center px-10 text-center">
+            <h2 className="max-w-[680px] text-[34px] font-bold leading-[1.15] tracking-tight text-white drop-shadow-xl">
+              Kau setia Tuhan
+              <br />
+              Dari dulu s’lamanya
+            </h2>
 
-          <p className="mt-3 text-lg font-medium text-white/90 drop-shadow">
-            Kasih-Mu tak pernah berubah
-          </p>
+            <p className="mt-3 text-lg font-medium text-white/90 drop-shadow">
+              Kasih-Mu tak pernah berubah
+            </p>
+          </div>
         </div>
       </div>
 
@@ -339,6 +376,7 @@ function OperatorPreview() {
           <h3 className="text-base font-semibold text-white">
             Operator Preview
           </h3>
+
           <p className="mt-1 text-xs text-white/40">
             Slide saat ini dan slide berikutnya.
           </p>
@@ -379,10 +417,11 @@ function OperatorPreview() {
 export function PresentationPage() {
   return (
     <div className="flex h-full min-w-0 flex-col">
-      <header className="shrink-0 bg-[#090a0d] px-8 pb-4 pt-6">
+      <header className="shrink-0 px-8 pb-4 pt-6">
         <h2 className="text-[28px] font-semibold leading-tight text-white">
           Presentation
         </h2>
+
         <p className="mt-1 text-sm text-white/45">Service control center</p>
       </header>
 

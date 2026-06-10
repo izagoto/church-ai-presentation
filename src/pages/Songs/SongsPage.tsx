@@ -380,23 +380,25 @@ function PresentationSongPreview({ song }: { song: SongResult }) {
     <div className="mt-3">
       <h4 className="text-xs font-semibold text-white">Presentation Preview</h4>
 
-      <div className="relative mt-2 overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-[#28213b] via-[#6b2b30] to-[#ef9d4b]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.28),transparent_28%)]" />
-        <div className="absolute inset-0 bg-black/15" />
+      <div className="relative mt-2 overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] p-[1px]">
+        <div className="relative overflow-hidden rounded-[11px] bg-gradient-to-br from-[#28213b] via-[#6b2b30] to-[#ef9d4b]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.28),transparent_28%)]" />
+          <div className="absolute inset-0 bg-black/15" />
 
-        <div className="relative flex aspect-[16/7.6] flex-col items-center justify-center px-5 text-center">
-          <h3 className="text-xl font-bold leading-tight text-white drop-shadow">
-            {song.title}
-          </h3>
+          <div className="relative flex aspect-[16/7.6] flex-col items-center justify-center px-5 text-center">
+            <h3 className="text-xl font-bold leading-tight text-white drop-shadow">
+              {song.title}
+            </h3>
 
-          <p className="mt-1.5 line-clamp-1 text-sm font-medium text-white/90">
-            {song.lyricPreview.replace("...", "")}
-          </p>
+            <p className="mt-1.5 line-clamp-1 text-sm font-medium text-white/90">
+              {song.lyricPreview.replace("...", "")}
+            </p>
+          </div>
+
+          <span className="absolute bottom-2 left-2 rounded-md bg-black/45 px-2 py-0.5 text-[11px] font-medium text-white">
+            1 / 6
+          </span>
         </div>
-
-        <span className="absolute bottom-2 left-2 rounded-md bg-black/45 px-2 py-0.5 text-[11px] font-medium text-white">
-          1 / 6
-        </span>
       </div>
     </div>
   );
@@ -452,7 +454,7 @@ export function SongsPage() {
 
   return (
     <div className="flex h-full min-w-0 flex-col">
-      <header className="shrink-0 bg-[#090a0d] px-8 pb-4 pt-6">
+      <header className="shrink-0 px-8 pb-4 pt-6">
         <h2 className="text-[28px] font-semibold leading-tight text-white">
           Songs
         </h2>

@@ -244,18 +244,20 @@ function BibleDetailPanel({ verse }: { verse: BibleResult }) {
           <p className="text-sm text-white/45">Projector Mode</p>
         </div>
 
-        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-br from-[#171724] via-[#2f2330] to-[#6d2b2a]">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(255,138,76,0.28),transparent_35%)]" />
-          <div className="absolute inset-x-0 bottom-0 h-24 bg-black/35" />
+        <div className="relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] p-[1px]">
+          <div className="relative overflow-hidden rounded-[11px] bg-gradient-to-br from-[#171724] via-[#2f2330] to-[#6d2b2a]">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom,rgba(255,138,76,0.28),transparent_35%)]" />
+            <div className="absolute inset-x-0 bottom-0 h-24 bg-black/35" />
 
-          <div className="relative flex aspect-[16/6.7] flex-col items-center justify-center px-8 text-center">
-            <p className="max-w-[720px] text-[28px] font-semibold leading-tight text-white drop-shadow">
-              {verse.content}
-            </p>
+            <div className="relative flex aspect-[16/6.7] flex-col items-center justify-center px-8 text-center">
+              <p className="max-w-[720px] text-[28px] font-semibold leading-tight text-white drop-shadow">
+                {verse.content}
+              </p>
 
-            <p className="mt-5 text-xl font-semibold text-red-400">
-              {verse.reference}
-            </p>
+              <p className="mt-5 text-xl font-semibold text-red-400">
+                {verse.reference}
+              </p>
+            </div>
           </div>
         </div>
       </div>
@@ -290,7 +292,7 @@ export function BiblePage() {
 
   return (
     <div className="flex h-full min-w-0 flex-col">
-      <header className="shrink-0 bg-[#090a0d] px-8 pb-4 pt-6">
+      <header className="shrink-0 px-8 pb-4 pt-6">
         <h2 className="text-[34px] font-semibold leading-tight text-white">
           Bible
         </h2>

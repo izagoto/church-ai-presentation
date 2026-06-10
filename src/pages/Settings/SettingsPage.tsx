@@ -142,18 +142,20 @@ function ThemePreview() {
     <div className="mt-4">
       <p className="mb-3 text-sm font-semibold text-white/65">Theme Preview</p>
 
-      <div className="relative overflow-hidden rounded-xl border border-white/10 bg-gradient-to-r from-[#252137] via-[#713238] to-[#ef8d42]">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.25),transparent_30%)]" />
-        <div className="absolute inset-x-0 bottom-0 h-16 bg-black/30" />
+      <div className="relative overflow-hidden rounded-xl border border-white/10 bg-white/[0.035] p-[1px]">
+        <div className="relative overflow-hidden rounded-[11px] bg-gradient-to-r from-[#252137] via-[#713238] to-[#ef8d42]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_right,rgba(255,255,255,0.25),transparent_30%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-black/30" />
 
-        <div className="relative flex h-[92px] flex-col items-center justify-center px-6 text-center">
-          <h4 className="text-2xl font-semibold leading-tight text-white drop-shadow">
-            Kaulah yang setia Tuhan
-          </h4>
+          <div className="relative flex h-[92px] flex-col items-center justify-center px-6 text-center">
+            <h4 className="text-2xl font-semibold leading-tight text-white drop-shadow">
+              Kaulah yang setia Tuhan
+            </h4>
 
-          <p className="mt-1 text-base font-medium text-white/90">
-            Kasih-Mu tak pernah berubah
-          </p>
+            <p className="mt-1 text-base font-medium text-white/90">
+              Kasih-Mu tak pernah berubah
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -279,7 +281,7 @@ function DataStorageSettings() {
 export function SettingsPage() {
   return (
     <div className="flex h-full min-w-0 flex-col">
-      <header className="shrink-0 bg-[#090a0d] px-8 pb-4 pt-6">
+      <header className="shrink-0 px-8 pb-4 pt-6">
         <h2 className="text-[34px] font-semibold leading-tight text-white">
           Settings
         </h2>

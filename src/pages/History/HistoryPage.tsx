@@ -396,7 +396,7 @@ export function HistoryPage() {
 
   return (
     <div className="flex h-full min-w-0 flex-col">
-      <header className="shrink-0 bg-[#090a0d] px-8 pb-4 pt-6">
+      <header className="shrink-0 px-8 pb-4 pt-6">
         <h2 className="text-[34px] font-semibold leading-tight text-white">
           History
         </h2>

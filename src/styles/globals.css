@@ -20,8 +20,10 @@ body {
   margin: 0;
   min-width: 1200px;
   min-height: 100vh;
-  background: #0b0b0f;
   color: #ffffff;
+
+  background: url("/dist/assets/background.png") center center / cover no-repeat
+    fixed;
 }
 
 button,
