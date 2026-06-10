@@ -473,7 +473,7 @@ export function SongsPage() {
                   <Sparkles size={16} />
                 </div>
               }
-              placeholder="Cari judul lagu, tema, atau penggalan lirik..."
+              placeholder="Search"
             />
 
             <div className="shrink-0">

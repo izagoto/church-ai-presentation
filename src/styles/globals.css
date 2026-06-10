@@ -90,3 +90,41 @@ button {
 .song-list-scroll::-webkit-scrollbar {
   display: none;
 }
+
+.bible-list-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bible-list-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.history-list-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.history-list-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.bible-list-scroll,
+.history-list-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bible-list-scroll::-webkit-scrollbar,
+.history-list-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.settings-page-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.settings-page-scroll::-webkit-scrollbar {
+  display: none;
+}
