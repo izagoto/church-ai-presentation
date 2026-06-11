@@ -49,7 +49,7 @@ export function AppTitleBar() {
         <AppLogoSmall />
 
         <p className="truncate text-sm font-semibold text-white/80">
-          Church AI Worship Presentation
+          Church Manager AI Worship Presentation
         </p>
       </div>
 

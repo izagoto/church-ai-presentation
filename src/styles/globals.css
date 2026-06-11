@@ -22,7 +22,7 @@ body {
   min-height: 100vh;
   color: #ffffff;
 
-  background: url("/dist/assets/background.png") center center / cover no-repeat
+  background: url("../assets/background.png") center center / cover no-repeat
     fixed;
 }
 
@@ -128,5 +128,38 @@ button {
 }
 
 .settings-page-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.song-list-scroll,
+.bible-list-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.song-list-scroll::-webkit-scrollbar,
+.bible-list-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.bible-list-scroll,
+.bible-detail-scroll,
+.settings-grid-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.bible-list-scroll::-webkit-scrollbar,
+.bible-detail-scroll::-webkit-scrollbar,
+.settings-grid-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.presentation-search-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.presentation-search-scroll::-webkit-scrollbar {
   display: none;
 }

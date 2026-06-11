@@ -56,13 +56,15 @@ function ChurchLogo() {
         />
       </svg>
 
-      <h1 className="text-[22px] font-semibold leading-tight text-white">
-        Persekutuan
-      </h1>
+      <div className="mt-3 text-center">
+        <h1 className="text-[22px] font-semibold leading-tight text-white">
+          Persekutuan
+        </h1>
 
-      <p className="mt-1 text-[18px] font-semibold leading-tight text-white">
-        Oikumene SII
-      </p>
+        <p className="mt-1 text-[18px] font-semibold leading-tight text-white">
+          Oikumene SII
+        </p>
+      </div>
     </div>
   );
 }
@@ -128,16 +130,6 @@ export function Sidebar() {
           );
         })}
       </nav>
-
-      <div className="relative z-10 mt-auto px-3 pb-4">
-        <div className="rounded-xl border border-white/10 bg-white/[0.035] px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] backdrop-blur-md">
-          <p className="text-sm font-semibold leading-none text-white">
-            Operator
-          </p>
-
-          <p className="mt-1.5 text-xs text-white/40">Local Device</p>
-        </div>
-      </div>
     </aside>
   );
 }

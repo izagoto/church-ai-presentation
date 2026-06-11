@@ -10,6 +10,7 @@
     "dev:electron": "wait-on http://localhost:5173 dist-electron/main.js && cross-env NODE_ENV=development electron .",
     "build": "tsc && vite build",
     "build:electron": "tsc -p tsconfig.electron.json",
+    "test:stores": "tsc -p tsconfig.test.json && node --test .tmp-tests/tests/**/*.test.js",
     "dist": "npm run build && npm run build:electron && electron-builder",
     "preview": "vite preview"
   },
